@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- <h1>Jakarta Air Quality</h1> -->
+    <!-- {{ api.0 }} -->
+    {% if zipcode  %}
+      {{ zipcode }}
+    {% endif  %}
+
+    {% if api %}
+        
+        {% if api == 'error' %}     
+
+            <div class="jumbotron">
+                <h1 class="display-4">API ERROR!</h1>
+                <p class="lead">data not found</p>
+                <hr class="my-4">
+                <p class="Lead">Api Loads: ERROR</p>
+                <!-- <a class="btn btn-primary btn-lg" href="https://airnow.gov/" role="button">Learn more</a> -->
+            </div>
+        
+        {% else %}
+
+            <div class="jumbotron {{ color }}">
+                <h1 class="display-4">{{ api.0.Category.Name }}</h1>
+                <p class="lead">Current {{ api.0.ReportingArea }} Air Quality is {{ api.0.AQI }}</p>
+                <hr class="my-4">
+
+                <p class="lead">{{ desc }}</p>
+
+                <p class="lead">More {{ api.0.ReportingArea }} Info: </p>
+                <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Date</td>
+                        <td>{{ api.0.DateObserved }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Time</td>
+                        <td>{{ api.0.HourObserved }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Local Time Zone</td>
+                        <td>{{ api.0.LocalTimeZone }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Latitude</td>
+                        <td>{{ api.0.Latitude }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Longitude</td>
+                        <td>{{ api.0.Longitude }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+
+        {% endif %}
+
+    {% endif %}
+
+{% endblock content %}

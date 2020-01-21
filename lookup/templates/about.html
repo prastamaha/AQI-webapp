@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Status</th>
+        <th scope="col">AQI (Air Quality Index)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Good</td>
+        <td>0 - 50</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Moderate</td>
+        <td>51 - 100</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Unhealthy for sensitive groups</td>
+        <td>101 - 150</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Unhealthy</td>
+        <td>151 - 200</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Very Unhealthy</td>
+        <td>201 - 300</td>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>Hazardous</td>
+        <td>301 - 500</td>
+      </tr>
+    </tbody>
+  </table>
+  
+{% endblock content %}
