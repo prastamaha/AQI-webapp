@@ -21,7 +21,7 @@ this application use django framework
     
     python manage.py runserver
 
-application will be running on [localhost:8000](localhost:8000)
+application will be running on [http://localhost:8000](http://localhost:8000)
 
 ## heroku deploy
 
@@ -33,4 +33,4 @@ setting.py
     STATIC_URL = '/static/'
 
 visit this app:
-[https://air-qualityapp.herokuapp.com](https:/air-qualityapp.herokuapp.com)
+[https://air-qualityapp.herokuapp.com](https://air-qualityapp.herokuapp.com)
