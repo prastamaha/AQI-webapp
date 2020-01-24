@@ -17,6 +17,14 @@ this application use django framework
     git clone https://github.com/prastamaha/AQI-webapp.git 
     cd AQI-webapp
 
+### comment Https Redirect
+ 
+comment https redirect at setting.py file
+
+    #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    #SECURE_SSL_REDIRECT = True
+
+
 ### running application
     
     python manage.py runserver
